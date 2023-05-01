@@ -4,7 +4,7 @@ const checkNumber = (input) =>{
         console.log('Erreur : veuillez saisir une chaîne de caractère');
     }
     for (let i = 0; i < input.length; i++){
-        if(!input[i].match(/^[0-9]+$/)){
+        if(!input[i].match(/^[0-9\s]+$/)){
             return console.log(false);
         }
     }
@@ -13,4 +13,4 @@ const checkNumber = (input) =>{
 
 checkNumber('Bonjour 36');
 checkNumber('42');
-checkNumber('4445I353');
+checkNumber('4445353');
