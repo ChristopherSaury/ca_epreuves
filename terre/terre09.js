@@ -1,12 +1,20 @@
-// Puissance d'un nombre
-function calcPow(n1,n2){
-    if( isNaN(n1) === true|| isNaN(n2) === true){
-        return console.log('erreur');
-    }else if(n2 < 0){
-        return console.log('erreur');
-    }else{
-        return console.log(n1**n2);
+// Racine carrée d'un nombre
+function squareRoot(n){
+
+    if(typeof n !== 'number' || !n){
+        return console.log('erreur : veuillez entrer des nombres');
+    }else if(n < 0){
+        return console.log('erreur : la racine carré de nombres négatifs n\'existe pas');
     }
+
+    let sqrt = n / 2;
+    let tmp = 0;
+
+    while(sqrt !== tmp){
+        tmp = sqrt;
+        sqrt = (n / tmp + tmp) / 2;
+    }
+    return console.log(sqrt);
 }
 
-calcPow(2,3);
+squareRoot(10);

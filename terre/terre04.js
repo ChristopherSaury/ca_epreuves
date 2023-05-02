@@ -1,12 +1,15 @@
-// L'alphabet à partir de
-function displayLetter(letter){
-    let letters = 'abcdefghijklmnopqrstuvwxyz';
-    let cutAlphabet = letters.substring(letters.lastIndexOf(letter.toLowerCase()));
-    let result = '';
-    for (let i = 0; i < cutAlphabet.length; i++){
-        result+= cutAlphabet[i] + '\n';
+// Pair ou impair
+function evenOdd(n){
+    if (n % 2 === 0 && isNaN(n) === false){
+        return console.log('paire');
+    }else if (n % 2 !== 0 && isNaN(n) === false){
+        return console.log('impaire');
+    }else{
+        return console.log('Tu ne me la mettras pas à l’envers.');
     }
-    return console.log(result)
 }
 
-displayLetter('n');
+evenOdd(2);
+evenOdd(5);
+evenOdd('Bonjour');
+evenOdd();

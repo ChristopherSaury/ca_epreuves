@@ -1,16 +1,11 @@
-// Divisions
-function divide(n1,n2){
-    if(n2 === 0){
-        return console.log('erreur.');
-    }else if(n1 < n2){
-        return console.log('erreur.');
-    }else if(n1 > n2){
-        let result = n1 / n2;
-        let modulus = (n1 % n2);
-        return console.log('Résultat : ' + result + '\n' + 'Reste : ' + modulus )
+// Inverser une chaîne
+function reverseString(characters){
+    let result = '';
+    for (let i = characters.length - 1; i >= 0; i--){
+        result+= characters[i];
     }
+    return console.log(result);
 }
 
-divide(5,2);
-divide(10,0);
-divide(3,5);
+reverseString('Hello World!');
+reverseString('Michel');

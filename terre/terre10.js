@@ -1,20 +1,15 @@
-// Racine carrée d'un nombre
-function squareRoot(n){
-
-    if(typeof n !== 'number' || !n){
-        return console.log('erreur : veuillez entrer des nombres');
-    }else if(n < 0){
-        return console.log('erreur : la racine carré de nombres négatifs n\'existe pas');
+// Nombre premier
+function isPrime (n){
+    if(typeof n !== 'number'){
+        return console.log('Erreur de saisie');
     }
-
-    let sqrt = n / 2;
-    let tmp = 0;
-
-    while(sqrt !== tmp){
-        tmp = sqrt;
-        sqrt = (n / tmp + tmp) / 2;
+    for (let i = 2; i < n; i++){
+        if(n % i === 0){
+            return console.log(`non ${n} n'est pas un nombre premier`);
+        }
     }
-    return console.log(sqrt);
+    return console.log(`oui ${n} est un nombre premier.`);
 }
 
-squareRoot(10);
+isPrime(5)
+isPrime(6)

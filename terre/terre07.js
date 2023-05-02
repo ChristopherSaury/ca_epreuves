@@ -1,11 +1,21 @@
-// Inverser une chaîne
-function reverseString(characters){
-    let result = '';
-    for (let i = characters.length - 1; i >= 0; i--){
-        result+= characters[i];
+// Taille d'une chaîne
+function countString(characters){
+    let count = 0;
+    if (arguments.length > 1){
+        return console.log('erreur');
+    }else if (typeof characters !== 'string'){
+        return console.log('erreur');
+    }else if(characters === ''){
+        return console.log('erreur');
+    }else {
+        for (let i = 0; i < characters.length; i++){
+            count++;
+        }
+        return console.log(count);
     }
-    return console.log(result);
 }
 
-reverseString('Hello World!');
-reverseString('Michel');
+countString('Hello world!');
+countString('');
+countString('Bonjour', 'Aurevoir');
+countString(10);

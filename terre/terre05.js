@@ -1,15 +1,16 @@
-// Pair ou impair
-function evenOdd(n){
-    if (n % 2 === 0 && isNaN(n) === false){
-        return console.log('paire');
-    }else if (n % 2 !== 0 && isNaN(n) === false){
-        return console.log('impaire');
-    }else{
-        return console.log('Tu ne me la mettras pas à l’envers.');
+// Divisions
+function divide(n1,n2){
+    if(n2 === 0){
+        return console.log('erreur.');
+    }else if(n1 < n2){
+        return console.log('erreur.');
+    }else if(n1 > n2){
+        let result = n1 / n2;
+        let modulus = (n1 % n2);
+        return console.log('Résultat : ' + result + '\n' + 'Reste : ' + modulus )
     }
 }
 
-evenOdd(2);
-evenOdd(5);
-evenOdd('Bonjour');
-evenOdd();
+divide(5,2);
+divide(10,0);
+divide(3,5);
