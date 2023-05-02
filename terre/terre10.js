@@ -1,19 +1,20 @@
 // Racine carrée d'un nombre
 function squareRoot(n){
-    
-    if(typeof n !== 'number'){
+
+    if(typeof n !== 'number' || !n){
         return console.log('erreur : veuillez entrer des nombres');
     }else if(n < 0){
         return console.log('erreur : la racine carré de nombres négatifs n\'existe pas');
     }
-    let y = n;
-    let z = (y + (n/y))/2;
-     
-    while(Math.abs(y-z)>=0.00001){
-        y = z;
-        z = (y + (n/y))/2;
+
+    let sqrt = n / 2;
+    let tmp = 0;
+
+    while(sqrt !== tmp){
+        tmp = sqrt;
+        sqrt = (n / tmp + tmp) / 2;
     }
-    return console.log(z);
+    return console.log(sqrt);
 }
 
-squareRoot(9);
+squareRoot(10);
