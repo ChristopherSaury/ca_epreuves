@@ -4,7 +4,7 @@ function fibonacci(n){
     let fiboB = 1;
     let fiboC;
 
-    if(isNaN(n) || n < 0){
+    if(isNaN(n) || n < 0 || !n){
         return console.log(-1);
     }else if (n === 0){
         return console.log(`F(${n}) : ${fiboA}`);

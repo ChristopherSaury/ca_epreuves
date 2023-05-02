@@ -3,7 +3,7 @@ const strDetect = (char1, char2) =>{
     let comparison = '';
     let match = 0;
 
-    if(typeof char1 !== 'string' || typeof char2 !== 'string'){
+    if(typeof char1 !== 'string' || typeof char2 !== 'string' || !char1 || !char2){
         return console.log('Erreur : Veuillez saisir des chaîne de caractère!!');
     }else if(char1 === '' || char2 === ''){
         return console.log('Erreur : Veuillez saisir toutes les entrées !!');

@@ -1,6 +1,6 @@
 // Majuscule
 const UpperCaseToStr = (input) => {
-    if (typeof input !== 'string'){
+    if (typeof input !== 'string' || !input){
         return console.log('Erreur de saisie');
     }
     let chars = input.split('');  

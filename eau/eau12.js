@@ -4,7 +4,7 @@ const absoluteMin = (arr) =>{
     let descArr;
     let result;
 
-    if(Array.isArray(arr) === false){
+    if(Array.isArray(arr) === false || !arr){
         return console.log('Erreur : veuillez saisir un tableau de chiffre');
     }else{
         descArr = arr.sort(function(a,b){return b-a});

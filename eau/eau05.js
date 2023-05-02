@@ -1,5 +1,8 @@
 // Prochain nombre premier
 const NextPrime = (n) =>{
+    if(!n || typeof n !== 'number'){
+        return console.log('Erreur');
+    }
     let isNext = "false";
 
     if(n === 1){

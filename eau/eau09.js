@@ -1,6 +1,6 @@
 // Chiffre only
 const checkNumber = (input) =>{
-    if(typeof input !== 'string'){
+    if(typeof input !== 'string' || !input){
         console.log('Erreur : veuillez saisir une chaîne de caractère');
     }
     for (let i = 0; i < input.length; i++){

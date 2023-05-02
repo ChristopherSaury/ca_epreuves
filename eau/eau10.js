@@ -1,7 +1,7 @@
 // Entre min et max
 const MinMax = (n1,n2) =>{
     switch(true){
-        case isNaN(n1) === true || isNaN(n2) :
+        case isNaN(n1) === true || isNaN(n2) || !n1 || !n2:
         console.log('Erreur : Veuillez saisir des chiffres');
         break;
         case n1 === undefined || n2 === undefined :
