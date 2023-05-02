@@ -1,19 +1,16 @@
-// Majuscule
-const UpperCaseToStr = (input) => {
-    if (typeof input !== 'string' || !input){
-        return console.log('Erreur de saisie');
+// Chiffre only
+const checkNumber = (input) =>{
+    if(typeof input !== 'string' || !input){
+        console.log('Erreur : veuillez saisir une chaîne de caractère');
     }
-    let chars = input.split('');  
-    for (let i = 0; i < chars.length; i++){    
-        switch(true){
-            case i === 0 || chars[i - 1] === ' ':
-            chars[i] = chars[i].toUpperCase();
-            break;
+    for (let i = 0; i < input.length; i++){
+        if(!input[i].match(/^[0-9\s]+$/)){
+            return console.log(false);
         }
     }
-    let result = chars.join("");
-    return console.log(result);
+    return console.log(true);
 }
 
-UpperCaseToStr('bonjour mathilde, comment vas-tu ?!')
-UpperCaseToStr(42);
+checkNumber('Bonjour 36');
+checkNumber('42');
+checkNumber('4445353');

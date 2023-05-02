@@ -1,31 +1,35 @@
-// Prochain nombre premier
-const NextPrime = (n) =>{
-    if(!n || typeof n !== 'number'){
-        return console.log('Erreur');
-    }
-    let isNext = "false";
+// String dans string
+const strDetect = (char1, char2) =>{
+    let comparison = '';
+    let match = 0;
 
-    if(n === 1){
-        return console.log(2);
-    }else if(n === 2){
-        return console.log(3);
+    if(typeof char1 !== 'string' || typeof char2 !== 'string' || !char1 || !char2){
+        return console.log('Erreur : Veuillez saisir des chaîne de caractère!!');
+    }else if(char1 === '' || char2 === ''){
+        return console.log('Erreur : Veuillez saisir toutes les entrées !!');
+    }else if (char2.length > char1.length){
+        return console.log('Erreur : La chaîne à comparer est plus longue que la chaîne de comparaison!!');
     }
 
-    while(isNext === "false"){
-        n++
-        let prime = 0;
-        for (let i = 2; i < n; i++){
-            if(n % i === 0){
-                n++;
-            }else{
-                prime++
-            }
+    let firstLetter = [];
+    for (let i = 0; i < char1.length; i++){
+        if(char1[i] === char2[0]){
+            firstLetter.push(i);
         }
-        if(prime > 1){
-            isNext = "OK";
-            return console.log(n)
+    }
+    firstLetter.forEach(index => {
+        for (i = index; i < index + char2.length; i++){
+            comparison+= char1[i];
         }
+        comparison === char2 ? match++ : comparison = '';
+    });
+    
+    if(match){
+        return console.log(true);
+    }else{
+        return console.log(false);
     }
 }
-
-NextPrime(14);
+strDetect('bonjour', 'jour')
+strDetect('bonjour', 'joure')
+strDetect('bonjour', '')

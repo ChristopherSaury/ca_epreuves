@@ -1,33 +1,24 @@
-// Différence minimum absolue
-const absoluteMin = (arr) =>{
-    let values = [];
-    let descArr;
-    let result;
-
+// tri a bulle
+const my_bubble_sort = (arr) =>{
+    // gestion des erreurs
     if(Array.isArray(arr) === false || !arr){
-        return console.log('Erreur : veuillez saisir un tableau de chiffre');
-    }else{
-        descArr = arr.sort(function(a,b){return b-a});
+        return console.log('Erreur : veuillez saisir un tableau de nombre')
     }
     for (let i = 0; i < arr.length; i++){
         if(isNaN(arr[i])){
-            return console.log('Erreur : veuillez saisir un tableau de chiffre uniquement');
+            // gestion des erreurs
+            return console.log('Erreur : veuillez saisir des nombres uniquement');
         }
-        for (let j = 0; j < descArr.length - 1; j++){
-            values.push(descArr[j] - descArr[j + 1]);
+        for (let j = 0; j < arr.length - 1; j++){
+            if(arr[j] > arr[j + 1]){
+                let value = arr[j]
+                arr[j] = arr[j + 1];
+                arr[j + 1] = value;
+            }
         }
     }
-    result = values[0];
-    for (let k = 0; k < values.length; k++){
-        if( values[k] < result ){
-        result = values[k];
-        }
-        
-    }
-    return console.log(result)
-    
+    return console.log(arr);
 }
 
-absoluteMin([5,1,19,21])
-absoluteMin([20,5,1,19,21])
-absoluteMin([-8,-6,4])
+my_bubble_sort([5,4,3,2,1]);
+my_bubble_sort(['test', 'test','test']);

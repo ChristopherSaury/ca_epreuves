@@ -1,19 +1,19 @@
-// Majuscule sur deux
-function UppercaseOnTwo(input) {
-    if(!input || input === '' || typeof input !== 'string'){
+// Majuscule
+const UpperCaseToStr = (input) => {
+    if (typeof input !== 'string' || !input){
         return console.log('Erreur de saisie');
     }
-
-    let chars = input.toLowerCase().split("");
-   
-    for (let i = 0; i < chars.length; i += 2) {
-    if(chars[i].match(/^[a-z]+$/) ){
-        chars[i] = chars[i].toUpperCase();
+    let chars = input.split('');  
+    for (let i = 0; i < chars.length; i++){    
+        switch(true){
+            case i === 0 || chars[i - 1] === ' ':
+            chars[i] = chars[i].toUpperCase();
+            break;
+        }
     }
-}
     let result = chars.join("");
+    return console.log(result);
+}
 
-    return console.log(result)
-};
-
-UppercaseOnTwo('Hello world !')
+UpperCaseToStr('bonjour mathilde, comment vas-tu ?!')
+UpperCaseToStr(42);

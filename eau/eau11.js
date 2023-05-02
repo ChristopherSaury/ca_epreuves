@@ -1,18 +1,33 @@
-// Index wanted
-const WantedIndex = (input) =>{
-    if (typeof input !== 'string' || !input){
-        return console.log('Erreur : Veuillez saisir un chaîne de caractère');
+// Différence minimum absolue
+const absoluteMin = (arr) =>{
+    let values = [];
+    let descArr;
+    let result;
+
+    if(Array.isArray(arr) === false || !arr){
+        return console.log('Erreur : veuillez saisir un tableau de chiffre');
+    }else{
+        descArr = arr.sort(function(a,b){return b-a});
     }
-    let sentence = input.split(' ');
-    
-    for (let i = 0; i < sentence.length - 1; i++){
-        if(sentence[i] === sentence[sentence.length -1]){
-            return console.log(i);
+    for (let i = 0; i < arr.length; i++){
+        if(isNaN(arr[i])){
+            return console.log('Erreur : veuillez saisir un tableau de chiffre uniquement');
+        }
+        for (let j = 0; j < descArr.length - 1; j++){
+            values.push(descArr[j] - descArr[j + 1]);
         }
     }
-    return console.log(-1);
+    result = values[0];
+    for (let k = 0; k < values.length; k++){
+        if( values[k] < result ){
+        result = values[k];
+        }
+        
+    }
+    return console.log(result)
+    
 }
 
-WantedIndex('Ceci est le monde qui contient Charlie un homme sympa Charlie');
-WantedIndex('test test test');
-WantedIndex('test boom');
+absoluteMin([5,1,19,21])
+absoluteMin([20,5,1,19,21])
+absoluteMin([-8,-6,4])

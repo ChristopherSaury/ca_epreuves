@@ -1,16 +1,26 @@
-// Paramètre à l'envers
-function displayArguments(){
-    if(arguments.length <= 0 ){
-        return console.log('Erreur : Il n\'y a pas d\'argument ');
+// Suite de Fibonacci
+function fibonacci(n){
+    let fiboA = 0;
+    let fiboB = 1;
+    let fiboC;
+
+    if(isNaN(n) || n < 0 || !n){
+        return console.log(-1);
+    }else if (n === 0){
+        return console.log(`F(${n}) : ${fiboA}`);
+    }else if (n === 1){
+        return console.log(`F(${n}) : ${fiboB}`);
+    }else{
+        for (let i = 2; i < n + 1; i++){
+            let fiboC = fiboA + fiboB;
+            fiboA = fiboB;
+            fiboB = fiboC;
+            if(i === n){
+                return console.log(` F(${i}) : ${fiboC}`);
+            }
+        }
     }
-    let result = '';
-    for (let i = arguments.length - 1; i >= 0 ; i--){
-        result+= arguments[i] + '\n';
-    }
-    return console.log(result);
+
 }
 
-displayArguments('Suis','Je','Drôle');
-displayArguments('ha','ho');
-displayArguments('Bonjour 36');
-displayArguments();
+fibonacci(6);

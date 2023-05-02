@@ -1,26 +1,31 @@
-// Suite de Fibonacci
-function fibonacci(n){
-    let fiboA = 0;
-    let fiboB = 1;
-    let fiboC;
+// Prochain nombre premier
+const NextPrime = (n) =>{
+    if(!n || typeof n !== 'number'){
+        return console.log('Erreur');
+    }
+    let isNext = "false";
 
-    if(isNaN(n) || n < 0 || !n){
-        return console.log(-1);
-    }else if (n === 0){
-        return console.log(`F(${n}) : ${fiboA}`);
-    }else if (n === 1){
-        return console.log(`F(${n}) : ${fiboB}`);
-    }else{
-        for (let i = 2; i < n + 1; i++){
-            let fiboC = fiboA + fiboB;
-            fiboA = fiboB;
-            fiboB = fiboC;
-            if(i === n){
-                return console.log(` F(${i}) : ${fiboC}`);
-            }
-        }
+    if(n === 1){
+        return console.log(2);
+    }else if(n === 2){
+        return console.log(3);
     }
 
+    while(isNext === "false"){
+        n++
+        let prime = 0;
+        for (let i = 2; i < n; i++){
+            if(n % i === 0){
+                n++;
+            }else{
+                prime++
+            }
+        }
+        if(prime > 1){
+            isNext = "OK";
+            return console.log(n)
+        }
+    }
 }
 
-fibonacci(6);
+NextPrime(14);
